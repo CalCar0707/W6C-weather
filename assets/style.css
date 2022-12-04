@@ -4,5 +4,27 @@ h1{
     background-color: darkslateblue;
     text-align: center;
     color: white;
-    padding: 20px;
+    padding: 10px;
+}
+#sidebar{
+    display: block;
+    width: 300px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px;
+}
+
+#city-input {
+    height: 30px;
+    width: 300px; 
+    margin-bottom: 20px;
+}
+
+#city-search{
+    width: 308px;
+    height: 25px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    
 }
