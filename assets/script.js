@@ -40,21 +40,20 @@ function todaysWeather() {
         .then(function (data) {
             console.log(data);
             
-            for (var i = 0; i < data.length; i=i+8) {
+            for (var i = 0; i < data.list.length; i=i+8) {
             var temperature = document.createElement('h3');
             var windSpeed = document.createElement('h4');
             var humidity = document.createElement('h4');
 
-            temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
-            windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
-            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
+            temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
+            windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
+            humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
 
             city.value;
             currentWeather.append(temperature);
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
             }
-            console.log(data)
        })
     });
     
