@@ -31,7 +31,7 @@ function todaysWeather() {
             currentWeather.appendChild(listItem);
         }
         //todays weather data-WORKING
-        var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial&per_page=6';
+        var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial';
         fetch(weatherUrl)
         .then(function (response) {
             return response.json();
@@ -40,7 +40,7 @@ function todaysWeather() {
         .then(function (data) {
             console.log(data);
             
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < data.length; i=i+8) {
             var temperature = document.createElement('h3');
             var windSpeed = document.createElement('h4');
             var humidity = document.createElement('h4');
@@ -54,6 +54,7 @@ function todaysWeather() {
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
             }
+            console.log(data)
        })
     });
     
