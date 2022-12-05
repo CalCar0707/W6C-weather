@@ -19,6 +19,7 @@ var currentWeather = document.getElementById('todays-weather');
 
 //function to fetch todays weather data
 function todaysWeather() {
+    queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
     fetch(queryUrl)
         .then(function (response) {
          return response.json();
