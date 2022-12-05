@@ -30,26 +30,32 @@ function todaysWeather() {
             listItem.textContent = data[i].name;
             currentWeather.appendChild(listItem);
         }
-        var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial';
+        //todays weather data-WORKING
+        var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial&per_page=6';
         fetch(weatherUrl)
         .then(function (response) {
             return response.json();
         })
+
         .then(function (data) {
             console.log(data);
+            
+            for (var i = 0; i < data.length; i++) {
             var temperature = document.createElement('h3');
             var windSpeed = document.createElement('h4');
             var humidity = document.createElement('h4');
 
-            temperature.textContent = 'Current Temperature: ' + data.list[0].main.temp + '° F';
-            windSpeed.textContent = 'Wind Speed: ' + data.list[0].wind.speed + ' MPH';
-            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity;
+            temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
+            windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
+            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
 
+            city.value;
             currentWeather.append(temperature);
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
+            }
        })
-    })
+    });
     
     
 }
