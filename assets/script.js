@@ -1,6 +1,6 @@
 //global variables
 var city = document.getElementById('city-input');
-console.log(city);
+
 
 //openweather api variables
 var apiKey = '5cf9dab34a270b7bc76596bb2d6c4d94';
@@ -17,21 +17,43 @@ var prevCityList = document.getElementById('prev-city-list');
 var currentWeather = document.getElementById('todays-weather');
 //var userInput = document.getElementById('city-input');
 
-//function to fetch todays weather data
+//function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
     queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
+    
     fetch(queryUrl)
         .then(function (response) {
          return response.json();
 })
+//adds prev search history to list- WORKING
     .then(function (data) {
         console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = data[i].name;
+            currentWeather.appendChild(listItem);
+        }
+        var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial';
+        fetch(weatherUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            //var temperature = document.createElement('h3');
+            //var windSpeed = document.createElement('h4');
+            //var humidity = document.createElement('h4');
+
+            //temperature.textContent = data[i].list[0].main
+       })
     })
+    
 }
 
 //local storage
-//var prevCity = localStorage.getItem('city');
-//prevCityList.textContent = prevCity;
+var prevCity = localStorage.getItem('city'.value);
+prevCityList.textContent = prevCity;
+
 
 //todays info including location, date, temp, wind, humidity, wind speed
 
