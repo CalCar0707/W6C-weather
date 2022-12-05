@@ -1,20 +1,43 @@
-//variables
+//global variables
+var city = document.getElementById('city-input');
+console.log(city);
+
+//openweather api variables
 var apiKey = '5cf9dab34a270b7bc76596bb2d6c4d94';
-var city = '';
+var queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
+//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+//dayjs variables
 var today = dayjs();
 
-//search for city 
+//search button variable
 var searchBtn = document.getElementById('city-search');
 
+var prevCityList = document.getElementById('prev-city-list');
+var currentWeather = document.getElementById('todays-weather');
+//var userInput = document.getElementById('city-input');
 
-var queryUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+//function to fetch todays weather data
+function todaysWeather() {
+    fetch(queryUrl)
+        .then(function (response) {
+         return response.json();
+})
+    .then(function (data) {
+        console.log(data);
+    })
+}
 
+//local storage
+//var prevCity = localStorage.getItem('city');
+//prevCityList.textContent = prevCity;
 
-
-fetch(queryUrl);
 //todays info including location, date, temp, wind, humidity, wind speed
 
+
+//retrieve todays date in proper formats- WORKING PROPERLY
 var todaysDate = dayjs();
 $('#date').text(today.format('M/D/YYYY'));
 
 //5 day forecast
+searchBtn.addEventListener('click', todaysWeather);
