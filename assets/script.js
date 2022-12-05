@@ -1,6 +1,7 @@
 //global variables
 var city = document.getElementById('city-input');
-
+var currentWeather = document.getElementById('todays-weather');
+var prevCityList = document.getElementById('prev-city-list');
 
 //openweather api variables
 var apiKey = '5cf9dab34a270b7bc76596bb2d6c4d94';
@@ -12,10 +13,6 @@ var today = dayjs();
 
 //search button variable
 var searchBtn = document.getElementById('city-search');
-
-var prevCityList = document.getElementById('prev-city-list');
-var currentWeather = document.getElementById('todays-weather');
-//var userInput = document.getElementById('city-input');
 
 //function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
@@ -40,13 +37,20 @@ function todaysWeather() {
         })
         .then(function (data) {
             console.log(data);
-            //var temperature = document.createElement('h3');
-            //var windSpeed = document.createElement('h4');
-            //var humidity = document.createElement('h4');
+            var temperature = document.createElement('h3');
+            var windSpeed = document.createElement('h4');
+            var humidity = document.createElement('h4');
 
-            //temperature.textContent = data[i].list[0].main
+            temperature.textContent = 'Current Temperature: ' + data.list[0].main.temp + '° F';
+            windSpeed.textContent = 'Wind Speed: ' + data.list[0].wind.speed + ' MPH';
+            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity;
+
+            currentWeather.append(temperature);
+            currentWeather.append(windSpeed);
+            currentWeather.append(humidity);
        })
     })
+    
     
 }
 
