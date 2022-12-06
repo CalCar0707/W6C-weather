@@ -63,8 +63,11 @@ function todaysWeather() {
 }
 
 //local storage
-var prevCity = localStorage.getItem('city'.value);
-prevCityList.textContent = prevCity;
+localStorage.setItem('city', JSON.stringify((city.value)));
+localStorage.getItem('city');
+
+//var prevCity = localStorage.getItem(city.value);
+//prevCityList.textContent = prevCity;
 
 
 //retrieve todays date in proper formats- WORKING PROPERLY
