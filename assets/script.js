@@ -5,7 +5,7 @@ var prevCityList = document.getElementById('prev-city-list');
 
 //openweather api variables
 var apiKey = '5cf9dab34a270b7bc76596bb2d6c4d94';
-var queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
+var queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
 //api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 //dayjs variables
