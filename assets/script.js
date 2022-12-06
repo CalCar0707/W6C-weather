@@ -16,7 +16,7 @@ var searchBtn = document.getElementById('city-search');
 
 //function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
-    queryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
+    queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
     
     fetch(queryUrl)
         .then(function (response) {
