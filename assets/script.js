@@ -6,6 +6,7 @@ var prevCityList = document.getElementById('prev-city-list');
 //openweather api variables
 var apiKey = '5cf9dab34a270b7bc76596bb2d6c4d94';
 var queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
+//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 //dayjs variables
 var today = dayjs();
@@ -13,7 +14,7 @@ var today = dayjs();
 //search button variable
 var searchBtn = document.getElementById('city-search');
 
-//function to fetch todays weather data
+//function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
     queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
     
@@ -29,7 +30,7 @@ function todaysWeather() {
             listItem.textContent = data[i].name;
             currentWeather.appendChild(listItem);
         }
-        //todays weather data
+        //todays weather data-WORKING
         //todays info including location, date, temp, wind, humidity, wind speed
         var weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=' + apiKey + '&units=imperial';
         fetch(weatherUrl)
@@ -40,7 +41,7 @@ function todaysWeather() {
         .then(function (data) {
             console.log(data);
             
-            //for loop for 5 day forecast
+            //for loop for 5 day forecast- WORKING
             for (var i = 0; i < data.list.length; i=i+8) {
             var temperature = document.createElement('h3');
             var windSpeed = document.createElement('h4');
@@ -69,9 +70,9 @@ localStorage.getItem('city');
 //prevCityList.textContent = prevCity;
 
 
-//retrieve todays date in proper formats
+//retrieve todays date in proper formats- WORKING PROPERLY
 var todaysDate = dayjs();
 $('#date').text(today.format('M/D/YYYY'));
 
 //5 day forecast
-searchBtn.addEventListener('click', todaysWeather());
+searchBtn.addEventListener('click', todaysWeather);
