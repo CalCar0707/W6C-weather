@@ -17,7 +17,6 @@ var searchBtn = document.getElementById('city-search');
 //function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
     queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
-    console.log(city.value);
 
     fetch(queryUrl)
         .then(function (response) {
@@ -78,7 +77,7 @@ localStorage.getItem('city');
 
 //retrieve todays date in proper formats- WORKING PROPERLY
 var todaysDate = dayjs();
-$('#date').text(today.format('M/D/YYYY'));
+//$('#date').text(today.format('M/D/YYYY'));
 
 //5 day forecast
 searchBtn.addEventListener('click', todaysWeather);
