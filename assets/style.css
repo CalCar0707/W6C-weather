@@ -10,15 +10,15 @@ h1{
     text-align: center;
     color: white;
     padding: 10px;
+    height: 60px;
 }
 
 #sidebar{
-    display: block;
+    display: inline-block;
     width: 300px;
     font-weight: bold;
     font-size: 20px;
     margin: 20px;
-    border-bottom: 20px;
 }
 
 #city-input {
@@ -28,11 +28,12 @@ h1{
     margin-bottom: 15px;
     border-width: 1px;
     border-radius: 6px;
+    font-size: 16px;
 }
 
 #city-search{
-    width: 301px;
     height: 30px;
+    width: 301px;
     background-color: cornflowerblue;
     color: white;
     border: none;
@@ -42,11 +43,32 @@ h1{
 }
 
 #todays-weather {
-    border: 10px;
+    display: inline-block;
+    height: 200px;
+    width: 1020px;
+    border-style: double;
+    border-width: 1px;
+    border-color: gray;
+}
+
+/* #todays-weather.h2{
+    font-size: 20px;
+    font-weight: bold;
     
-
 }
 
-#prev-city-list.li {
-    background-color: grey;
+#todays-weather.h3 {
+    font-size: 15px;
+} */
+
+
+#prev-city-list {
+    display: block;
+    display: none;
+    height: 30px;
+    width: 300px;
+    background-color: gray;
+    margin: 20px;
+    border-radius: 6px;
 }
+

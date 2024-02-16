@@ -26,9 +26,9 @@ function todaysWeather() {
     .then(function (data) {
         console.log(data);
         for (var i = 0; i < data.length; i++) {
-            var listItem = document.createElement('li');
-            listItem.textContent = data[i].name;
-            currentWeather.appendChild(listItem);
+            var prevCitySearch = document.createElement('h3');
+            prevCitySearch.textContent = data[i].name;
+            currentWeather.appendChild(prevCitySearch);
         }
         //todays weather data
                 //todays info including location, date, temp, wind, humidity, wind speed
@@ -44,28 +44,34 @@ function todaysWeather() {
             currentWeather.append(city.value);
 
             //for loop for 5 day forecast- WORKING
-            for (var i = 0; i < data.list.length; i=i+8) {
+            // for (var i = 0; i < data.list.length; i=i+8) {
                 var date = document.createElement('h2');
                 var temperature = document.createElement('h3');
                 var windSpeed = document.createElement('h4');
                 var humidity = document.createElement('h4');
 
-            date.textContent = data.list[i].dt_txt;
-            temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
-            windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
-            humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
+            // date.textContent = data.list[i].dt_txt;
+            // temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
+            // windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
+            // humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
+
+            date.textContent = data.list[0].dt_txt;
+            temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
+            windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
+            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
 
             //dont need city to show several times in loop
             currentWeather.append(date);
             currentWeather.append(temperature);
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
-            }
+            })
        })
-    });
+    }
+    //);
     
     
-}
+//}
 
 //local storage
 localStorage.setItem('city', JSON.stringify((city.value)));
