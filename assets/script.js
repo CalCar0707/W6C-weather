@@ -26,8 +26,9 @@ function todaysWeather() {
     .then(function (data) {
         console.log(data);
         for (var i = 0; i < data.length; i++) {
-            var prevCitySearch = document.createElement('h3');
+            var prevCitySearch = document.createElement('h2');
             prevCitySearch.textContent = data[i].name;
+            console.log(prevCitySearch);
             currentWeather.appendChild(prevCitySearch);
         }
         //todays weather data
@@ -41,14 +42,13 @@ function todaysWeather() {
         .then(function (data) {
             console.log(data);
             
-            currentWeather.append(city.value);
 
             //for loop for 5 day forecast- WORKING
             // for (var i = 0; i < data.list.length; i=i+8) {
-                var date = document.createElement('h2');
-                var temperature = document.createElement('h3');
-                var windSpeed = document.createElement('h4');
-                var humidity = document.createElement('h4');
+                var date = document.createElement('h3');
+                var temperature = document.createElement('div');
+                var windSpeed = document.createElement('div');
+                var humidity = document.createElement('div');
 
             // date.textContent = data.list[i].dt_txt;
             // temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
