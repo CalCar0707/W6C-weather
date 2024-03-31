@@ -1,6 +1,12 @@
 //global variables
+
+// user input city being searched
 var city = document.getElementById('city-input');
+
+//todays weather div display
 var currentWeather = document.getElementById('todays-weather');
+
+//previous search history
 var prevCityList = document.getElementById('prev-city-list');
 
 //openweather api variables
@@ -14,7 +20,6 @@ var today = dayjs();
 //search button variable
 var searchBtn = document.getElementById('city-search');
 
-console.log(typeof null);
 
 //function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
