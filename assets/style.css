@@ -16,8 +16,10 @@
 
 /*BEST PRACTICE TARGETS BY CLASS NOT ID*/
 
+/* Search bar rules*/
 .container {
     display: inline-block;
+    position: fixed;
     width: 300px;
     font-weight: bold;
     font-size: 20px;
@@ -26,7 +28,7 @@
 
 #city-input {
     height: 40px;
-    width: 300px; 
+    width: 250px; 
     margin-top: 10px;
     margin-bottom: 15px;
     border-width: 1px;
@@ -36,7 +38,7 @@
 
 #search-btn {
     height: 30px;
-    width: 301px;
+    width: 251px;
     background-color: #5f77e2;
     color: #fff;
     border: none;
@@ -45,9 +47,25 @@
     
 }
 
+.separator {
+    height: 1px;
+    width: 251px;
+    margin: 18px 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .separator::before {
+    content: "or";
+    font-size: 12px;
+    padding: 0 15px;
+} */
+
 #location-btn {
     height: 30px;
-    width: 301px;
+    width: 251px;
     background-color: #00feba;
     color: #fff;
     border: none;
@@ -55,33 +73,38 @@
     border-radius: 6px;
 }
  
+/* Todays weather output */
 #todays-weather {
-    display: inline-block;
+    display: flex;
+    background-color: #74d3f3;
     height: 200px;
-    width: 50%;
+    width: 73%;
     border: 1px solid gray;
-    padding: 22px;
-    margin-top: 30px;
-    /* line-height: 1.8; */
+    border-radius: 6px;
+    padding: 20px;
+    margin: 30px 310px 30px ;
+    justify-content: space-between;
 
 }
 
-.weather-icon {
+
+
+.icon {
     width: 120px;
 }
 
-#todays-weather h2 {
+/* #todays-weather h2 {
     font-size: 25px;
     font-weight: 750;
     
-}
+} */
 
-#todays-weather div {
+/* #todays-weather div {
     line-height: 1.8;
     font-weight: 500;
     
     
-}
+} */
 
 
 #prev-city-list {

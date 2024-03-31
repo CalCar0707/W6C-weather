@@ -53,16 +53,16 @@ function todaysWeather() {
             //for loop for 5 day forecast- WORKING
             for (var i = 0; i < data.list.length; i=i+8) {
                 var date = document.createElement('h3');
-                var temperature = document.createElement('div');
+                var temperature = document.createElement('h4');
                 var weather = document.createElement('div');
                 var icon = document.createElement('img');
                 var windSpeed = document.createElement('div');
                 var humidity = document.createElement('div');
 
             date.textContent = data.list[i].dt_txt;
+            temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
             weather.textContent = data.list[i].weather[0].main 
             icon.textContent = data.list[i].weather[0].icon
-            temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
             windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
             humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
 
