@@ -54,10 +54,14 @@ function todaysWeather() {
             for (var i = 0; i < data.list.length; i=i+8) {
                 var date = document.createElement('h3');
                 var temperature = document.createElement('div');
+                var weather = document.createElement('div');
+                var icon = document.createElement('img');
                 var windSpeed = document.createElement('div');
                 var humidity = document.createElement('div');
 
             date.textContent = data.list[i].dt_txt;
+            weather.textContent = data.list[i].weather[0].main 
+           //icon.textContent = data.list[i].weather[0].icon
             temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
             windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
             humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
@@ -66,10 +70,13 @@ function todaysWeather() {
             // temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
             // windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
             // humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
+            console.log(icon);
 
             //dont need city to show several times in loop
             currentWeather.append(date);
             currentWeather.append(temperature);
+            currentWeather.append(weather);
+            //currentWeather.append(icon);
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
             }
