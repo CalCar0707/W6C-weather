@@ -14,6 +14,8 @@ var today = dayjs();
 //search button variable
 var searchBtn = document.getElementById('city-search');
 
+console.log(typeof null);
+
 //function to fetch todays weather data- WORKING PROPERLY
 function todaysWeather() {
     queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value + '&appid=' + apiKey;
@@ -44,31 +46,32 @@ function todaysWeather() {
             
 
             //for loop for 5 day forecast- WORKING
-            // for (var i = 0; i < data.list.length; i=i+8) {
+            for (var i = 0; i < data.list.length; i=i+8) {
                 var date = document.createElement('h3');
                 var temperature = document.createElement('div');
                 var windSpeed = document.createElement('div');
                 var humidity = document.createElement('div');
 
-            // date.textContent = data.list[i].dt_txt;
-            // temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
-            // windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
-            // humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
+            date.textContent = data.list[i].dt_txt;
+            temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
+            windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
+            humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
 
-            date.textContent = data.list[0].dt_txt;
-            temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
-            windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
-            humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
+            // date.textContent = data.list[0].dt_txt;
+            // temperature.textContent = 'Temp: ' + data.list[0].main.temp + '° F';
+            // windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
+            // humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
 
             //dont need city to show several times in loop
             currentWeather.append(date);
             currentWeather.append(temperature);
             currentWeather.append(windSpeed);
             currentWeather.append(humidity);
+            }
             })
        })
     }
-    //);
+  //  );
     
     
 //}

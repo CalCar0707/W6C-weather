@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 
-h1 {
-    background-color: darkslateblue;
+.header {
+    /* background-color: darkslateblue; */
+    background: linear-gradient(150deg, #00feba, #5f77e2);
     text-align: center;
     color: white;
     padding: 10px;
@@ -36,20 +37,27 @@ h1 {
 #city-search{
     height: 30px;
     width: 301px;
-    background-color: cornflowerblue;
+    background-color: #5d83e7;
     color: white;
     border: none;
     font-size: 18px;
     border-radius: 6px;
     
 }
-
+ 
 #todays-weather {
     display: inline-block;
     height: 200px;
-    width: 1020px;
+    width: 50%;
     border: 1px solid gray;
-    padding: 20px;
+    padding: 22px;
+    margin-top: 30px;
+    /* line-height: 1.8; */
+
+}
+
+.weather-icon {
+    width: 120px;
 }
 
 #todays-weather h2 {
@@ -59,6 +67,8 @@ h1 {
 }
 
 #todays-weather div {
+    line-height: 1.8;
+    font-weight: 500;
     
     
 }
