@@ -18,7 +18,7 @@ var queryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city.value +
 var today = dayjs();
 
 //search button variable
-var searchBtn = document.getElementById('city-search');
+var searchBtn = document.getElementById('search-btn');
 
 
 //function to fetch todays weather data- WORKING PROPERLY
@@ -61,7 +61,7 @@ function todaysWeather() {
 
             date.textContent = data.list[i].dt_txt;
             weather.textContent = data.list[i].weather[0].main 
-           //icon.textContent = data.list[i].weather[0].icon
+            icon.textContent = data.list[i].weather[0].icon
             temperature.textContent = 'Temp: ' + data.list[i].main.temp + '° F';
             windSpeed.textContent = 'Wind: ' + data.list[i].wind.speed + ' MPH';
             humidity.textContent = 'Humidity: ' + data.list[i].main.humidity + '%';
@@ -71,6 +71,11 @@ function todaysWeather() {
             // windSpeed.textContent = 'Wind: ' + data.list[0].wind.speed + ' MPH';
             // humidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%';
             console.log(icon);
+
+            // if(icon === '04d') {
+            //     var icon = document.createElement('img');
+                    // currentWeather.append()
+            // }
 
             //dont need city to show several times in loop
             currentWeather.append(date);

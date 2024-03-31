@@ -16,7 +16,7 @@
 
 /*BEST PRACTICE TARGETS BY CLASS NOT ID*/
 
-.sidebar {
+.container {
     display: inline-block;
     width: 300px;
     font-weight: bold;
@@ -34,15 +34,25 @@
     font-size: 16px;
 }
 
-#city-search{
+#search-btn {
     height: 30px;
     width: 301px;
-    background-color: #5d83e7;
-    color: white;
+    background-color: #5f77e2;
+    color: #fff;
     border: none;
     font-size: 18px;
     border-radius: 6px;
     
+}
+
+#location-btn {
+    height: 30px;
+    width: 301px;
+    background-color: #00feba;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
 }
  
 #todays-weather {
