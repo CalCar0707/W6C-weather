@@ -76,9 +76,9 @@
 /* Todays weather output */
 #todays-weather {
     display: flex;
-    background-color: #74d3f3;
+    background-color: #d7f3ce;
     height: 200px;
-    width: 73%;
+    width: 65%;
     border: 1px solid gray;
     border-radius: 6px;
     padding: 20px;
@@ -87,27 +87,31 @@
 
 }
 
-
-
-.icon {
+.icon img {
     width: 120px;
+    margin-top:  -10px;
+    margin-bottom: -20px;
+    margin-right: 30px;
 }
 
-/* #todays-weather h2 {
+#todays-weather h3 {
     font-size: 25px;
-    font-weight: 750;
+    font-weight: 600;
     
-} */
+}
 
-/* #todays-weather div {
+#todays-weather h4 {
+    margin-top: 12px; 
+    margin-left: 20px;
     line-height: 1.8;
     font-weight: 500;
     
     
-} */
+}
 
 
-#prev-city-list {
+
+/* #prev-city-list {
     display: block;
     display: none;
     height: 30px;
@@ -115,5 +119,5 @@
     background-color: gray;
     margin: 20px;
     border-radius: 6px;
-}
+} */
 
