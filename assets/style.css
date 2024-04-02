@@ -7,7 +7,11 @@
 
 .header {
     /* background-color: darkslateblue; */
-    background: linear-gradient(150deg, #00feba, #5f77e2);
+    /* background: linear-gradient(150deg, #00feba, #5f77e2); */
+    /* need to make bg image responsive */
+    background-image: url('./images/weather-dashboard-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
     text-align: center;
     color: white;
     padding: 10px;
@@ -19,7 +23,7 @@
 /* Search bar rules*/
 .container {
     display: inline-block;
-    position: fixed;
+    position: absolute;
     width: 300px;
     font-weight: bold;
     font-size: 20px;
@@ -95,7 +99,7 @@
 }
 
 #todays-weather h3 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     
 }
@@ -109,6 +113,24 @@
     
 }
 
+#future-forecast h2 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.weather-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.weather-cards .card {
+    list-style: none;
+    /* change to lighter grey */
+    background: #6C757D;
+    padding: 18px 16px;
+    border-radius: 6px;
+    width: calc(100% / 5);
+}
 
 
 /* #prev-city-list {
