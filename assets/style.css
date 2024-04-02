@@ -101,7 +101,6 @@
 #todays-weather h3 {
     font-size: 20px;
     font-weight: 600;
-    
 }
 
 #todays-weather h4 {
@@ -109,8 +108,6 @@
     margin-left: 20px;
     line-height: 1.8;
     font-weight: 500;
-    
-    
 }
 
 #future-forecast h2 {
@@ -132,6 +129,10 @@
     width: calc(100% / 5);
 }
 
+.weather-cards .card img {
+    max-width: 70px;
+    margin: 5px 0 -12px 0;
+}
 
 /* #prev-city-list {
     display: block;
@@ -142,4 +143,40 @@
     margin: 20px;
     border-radius: 6px;
 } */
+
+
+/* media queries for screen sizes */
+/* isnt using 100% of width */
+@media (max-width: 1400px) {
+    .weather-cards {
+        flex-wrap: wrap;
+    }
+    .weather-cards .card {
+        width: calc(100% / 4 - 15px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .weather-cards .card {
+        width: calc(100% / 3 - 15px);
+    }
+}
+
+/* isnt going to 2 columns, stays at 3 */
+@media (max-width: 950px) {
+    .weather-cards .card {
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+/* @media (max-width: 750px) {
+    .container {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+    #city-input {
+        width: 100%;
+    }
+} */
+
 
