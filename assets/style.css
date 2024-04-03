@@ -30,7 +30,7 @@
     margin: 20px;
 }
 
-#city-input {
+.city-input {
     height: 40px;
     width: 250px; 
     margin-top: 10px;
@@ -40,7 +40,7 @@
     font-size: 16px;
 }
 
-#search-btn {
+.search-btn {
     height: 30px;
     width: 251px;
     background-color: #5f77e2;
@@ -144,6 +144,15 @@
     border-radius: 6px;
 } */
 
+/* .prev-city {
+    height: 30px;
+    width: 251px;
+    background-color: #00feba;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+} */
 
 /* media queries for screen sizes */
 /* isnt using 100% of width */
